@@ -1,0 +1,33 @@
+				THE FORGOTTEN ONES - DOCUMENTATION
+
+Erling
+Sam
+K.M.
+Ivan
+
+V1
+We have created a scene for the game and found a spaceship to use as one of the 
+players. We found other ships that we may be able to use for choices for the player that
+could have different stats on movement speed and health, implementing more ships would
+be an extra piece we would only add if we had enough time.
+ 
+V2
+The can now be controlled by the arrow keys and can be move on the x and y axes.
+Note that this is a 2D game. We were also able to make the background scene scroll by 
+from the top down.
+
+V3
+Added a basic prototype start screen 
+
+
+In the future we are first going to focus on the enemies, implementing a basic AI 
+system and a looting system, enemies that are destroyed will drop pickups that will
+upgrade the players guns, armour, and shield.
+
+After that we need to implement the shooting for both the enemies and the player and the
+shield for the player.
+
+We would like to implement obstacles that must be avoided or destroyed with pickups 
+released if destroyed. 
+  
+
