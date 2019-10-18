@@ -6,7 +6,11 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5f;
     public Rigidbody2D rb;
-	public float minY, maxY, minX, maxX;
+	[Header("Player Bounds")]
+	public float minY = -4f;
+	public float maxY = 11.5f; 
+	public float minX = -16f; 
+	public float maxX = 16.7f;
 
     new Vector2 movement;
     void Start()

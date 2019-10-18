@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/ArmoredSoldiers/Demo.unity
+- path: Assets/Scripts/Game.unity
   isLoaded: 1
   isActive: 1
