@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
     public states currentState;
+    private EnemySpawner parentSpawner;
 	public float speed = 10f;
 	public Rigidbody2D rb;
 	[Header("Sine Wave Movement")]
@@ -12,7 +14,7 @@ public class EnemyMovement : MonoBehaviour
 	public float period = 0.75f;
 	public float shift = 1f;
 	public float yChange = 0.075f;
-	private float newX;
+    private float newX;
 	private float newY;
 	public enum states{
 		straight,
@@ -21,12 +23,25 @@ public class EnemyMovement : MonoBehaviour
 	}
 	
 	
-	
 	// Start is called before the first frame update
     void Start()
     {
-       rb = GetComponent<Rigidbody2D>(); 
+        rb = GetComponent<Rigidbody2D>();
+        EnemySpawner enemySpawner = GetComponentInParent<EnemySpawner>();
+        if (enemySpawner.currentState == 0)
+        {
+            currentState = 0;
+        } else if (enemySpawner.currentState == EnemySpawner.state.wavy)
+        {
+            currentState = states.wavy;
+        }
+        else if (enemySpawner.currentState == EnemySpawner.state.loop)
+        {
+            currentState = states.loop;
+        }
+
     }
+
 
     // Update is called once per frame
     void Update()
@@ -38,7 +53,7 @@ public class EnemyMovement : MonoBehaviour
 			case states.wavy:
 				newY = transform.position.y - yChange;
 				newX = amplitude * Mathf.Sin(period * newY) + shift;
-				Vector2 tempPosition = new Vector2(newX, newY);
+				Vector2 tempPosition = new Vector2(newX + transform.parent.position.x - 2.5f, newY);
 				transform.position = tempPosition;
 				break;
 			case states.loop:
