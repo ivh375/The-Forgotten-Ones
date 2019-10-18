@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
 	private float nextTimeToSpawn = 0.0f;
     private Vector2 spawnLocation;
 	public state currentState;
-	public enum state{
+    public enum state{
 		straight,
 		wavy,
         loop
@@ -20,15 +20,21 @@ public class EnemySpawner : MonoBehaviour
     }
 
     // Update is called once per frame
+    [System.Obsolete]
     void Update()
     {
         if (Time.time >= nextTimeToSpawn) {
             nextTimeToSpawn = Time.time + 1f / spawnRate;
             spawnLocation = new Vector2(transform.position.x, transform.position.y);
+            //instantiates enemy into game as "obj"
 			GameObject obj = Instantiate(Enemy, spawnLocation, Quaternion.identity);
+            //sets enemy to be child of spawner
             obj.transform.parent = transform;
-            
+            //Destroys enemy after 10 seconds ( couldnt get isOffScreen -> Destroy type thing to work)
+            Destroy(obj, 10);
 
+            
         }
     }
+    
 }

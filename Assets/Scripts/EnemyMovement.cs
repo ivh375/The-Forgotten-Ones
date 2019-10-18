@@ -27,6 +27,7 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        //following code passes movement type value set in spawner to the enemy object here:
         EnemySpawner enemySpawner = GetComponentInParent<EnemySpawner>();
         if (enemySpawner.currentState == 0)
         {
@@ -46,6 +47,7 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //enemy movement patterns implemented here in given states
         switch(currentState){
 			case states.straight:
 			rb.velocity = new Vector2(rb.velocity.x, -speed);
