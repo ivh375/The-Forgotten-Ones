@@ -9,13 +9,17 @@ public class EnemyMovement : MonoBehaviour
     private EnemySpawner parentSpawner;
 	public float speed = 10f;
 	public Rigidbody2D rb;
-	[Header("Sine Wave Movement")]
+	[Header("Sine/Cos Movement Modifiers")]
 	public float amplitude = 5f;
 	public float period = 0.75f;
 	public float shift = 1f;
 	public float yChange = 0.075f;
+    [Header("Y Speed loop behaviour")]
+    public float yChangeMod = 0.03f;
     private float newX;
 	private float newY;
+    private float x;
+    private float y;
 	public enum states{
 		straight,
 		wavy,
@@ -29,6 +33,12 @@ public class EnemyMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         //following code passes movement type value set in spawner to the enemy object here:
         EnemySpawner enemySpawner = GetComponentInParent<EnemySpawner>();
+        speed = enemySpawner.speed;
+        amplitude = enemySpawner.amplitude;
+        period = enemySpawner.period;
+        shift = enemySpawner.shift;
+        yChange = enemySpawner.yChange;
+        yChangeMod = enemySpawner.yChangeMod;
         if (enemySpawner.currentState == 0)
         {
             currentState = 0;
@@ -59,7 +69,11 @@ public class EnemyMovement : MonoBehaviour
 				transform.position = tempPosition;
 				break;
 			case states.loop:
-				break;
+                yChange = yChange + yChangeMod;
+                x = amplitude * Mathf.Cos(Time.time * speed);
+                y = amplitude * Mathf.Sin(Time.time * speed) - yChange;
+                transform.position = new Vector2(x, y + transform.parent.position.y);
+                break;
 			default:
 				break;
 		}

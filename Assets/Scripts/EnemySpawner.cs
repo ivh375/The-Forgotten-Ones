@@ -4,11 +4,20 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    public GameObject Enemy;
     public float spawnRate = 0.4f;
-	public GameObject Enemy;
-	private float nextTimeToSpawn = 0.0f;
+    public state currentState;
+    public float speed = 10f;
+    [Header("Sine/Cos Movement Modifiers")]
+    public float amplitude = 5f;
+    public float period = 0.75f;
+    public float shift = 1f;
+    public float yChange = 0.075f;
+    [Header("Y Speed loop behaviour")]
+    public float yChangeMod = 0.03f;
+    private float nextTimeToSpawn = 0.0f;
     private Vector2 spawnLocation;
-	public state currentState;
+	
     public enum state{
 		straight,
 		wavy,
@@ -17,6 +26,7 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
     }
 
     // Update is called once per frame
