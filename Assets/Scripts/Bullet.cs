@@ -5,16 +5,9 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     Collision collision;
-
-    void OnCollisionEnter2D(Collision2D col)
-    {
-        if (col.gameObject.tag.Equals("Enemy"))
-        {
-            Destroy(col.gameObject); // this destroys the enemy
-            Destroy(gameObject); // this destroys the bullet
-        }
-    }
-
+	private float damage = 50f; //to be recieved from weapon class
+	
+	
     // Start is called before the first frame update
     void Start()
     {

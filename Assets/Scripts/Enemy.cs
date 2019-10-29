@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-
-    public int CurrHealth;
-
+    public float CurrHealth = 100f;
+	
+	public void health(float damage){
+		CurrHealth -= damage;
+	}
+	
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +19,10 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //health check
+		if (CurrHealth <= 0f){
+			Destroy(gameObject); //destroys enemy
+		}
+		
     }
 }
