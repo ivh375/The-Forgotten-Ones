@@ -227,8 +227,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 888b2501a05a8774782b9e6d59a6e34b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 15
+  speed: 15
   rb: {fileID: 0}
+  minY: -4
+  maxY: 11
+  minX: -14.3
+  maxX: 17
 --- !u!96 &604829466
 TrailRenderer:
   serializedVersion: 2
