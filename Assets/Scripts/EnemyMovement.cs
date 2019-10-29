@@ -72,7 +72,7 @@ public class EnemyMovement : MonoBehaviour
                 yChange = yChange + yChangeMod;
                 x = amplitude * Mathf.Cos(Time.time * speed);
                 y = amplitude * Mathf.Sin(Time.time * speed) - yChange;
-                transform.position = new Vector2(x, y + transform.parent.position.y);
+                transform.position = new Vector2(x + transform.parent.position.x, y + transform.parent.position.y);
                 break;
 			default:
 				break;

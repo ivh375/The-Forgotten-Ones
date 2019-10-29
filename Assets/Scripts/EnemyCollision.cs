@@ -5,11 +5,15 @@ using UnityEngine;
 public class EnemyCollision : MonoBehaviour
 {
     public GameObject Bullet;
-    private Collision other;
+	public GameObject Enemy;
+	private Enemy enemy;
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-		gameObject.SendMessage("health", Bullet.GetComponent("damage"));
-        Destroy(Bullet); // this destroys the bullet        }
-    }
+   /*  Collision collision;
+	void OnCollisionEnter2D(Collision2D col){
+        if (col.gameObject.tag.Equals("Bullet"))
+        {
+            enemy.health(50f); 
+            Destroy(col.Bullet); // this destroys the bullet
+        }
+    } */
 }

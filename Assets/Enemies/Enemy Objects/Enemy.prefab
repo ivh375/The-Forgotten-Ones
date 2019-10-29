@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8671405545759386016}
   - component: {fileID: 8671405545759386022}
   - component: {fileID: 2099841839614583375}
+  - component: {fileID: 4980869199470675551}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -60,6 +61,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -102,6 +104,7 @@ MonoBehaviour:
   period: 0.75
   shift: 0
   yChange: 0.075
+  yChangeMod: 0.03
 --- !u!50 &8671405545759386016
 Rigidbody2D:
   serializedVersion: 4
@@ -151,5 +154,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8da8f49ecd97cf45a9927e1e3359b49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 5970836173747452299, guid: 78d755483e1368346be71e4f871839fa, type: 3}
-  enemy: {fileID: 8671405545759386029}
+  Bullet: {fileID: 5970836173747452299, guid: 78d755483e1368346be71e4f871839fa, type: 3}
+  Enemy: {fileID: 8671405545759386029}
+--- !u!114 &4980869199470675551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8671405545759386029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b958e47934ff9a24f8f44082cc7b0a57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrHealth: 100

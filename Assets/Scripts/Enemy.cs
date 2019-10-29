@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     public float CurrHealth = 100f;
 	
 	public void health(float damage){
-		CurrHealth -= damage;
+		CurrHealth = CurrHealth - damage;
 	}
 	
     // Start is called before the first frame update

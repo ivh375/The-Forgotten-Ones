@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 
     public int Health;
     Weapon currentGun;
-    int randarray[];
+
 
 
     // Start is called before the first frame update
