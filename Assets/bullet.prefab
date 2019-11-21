@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a69034bbb8c329c45b157268401de215, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
 --- !u!1001 &6601392519446559902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -163,6 +164,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5970836173747452303}
     m_Modifications:
+    - target: {fileID: 2132980855382172275, guid: 1e65b091df7516046a121a615fb7f24d,
+        type: 3}
+      propertyPath: m_Name
+      value: Area Light
+      objectReference: {fileID: 0}
     - target: {fileID: 5361191686176660763, guid: 1e65b091df7516046a121a615fb7f24d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -227,11 +233,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2132980855382172275, guid: 1e65b091df7516046a121a615fb7f24d,
-        type: 3}
-      propertyPath: m_Name
-      value: Area Light
       objectReference: {fileID: 0}
     - target: {fileID: 6407115039934026938, guid: 1e65b091df7516046a121a615fb7f24d,
         type: 3}
